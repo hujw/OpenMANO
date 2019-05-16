@@ -71,3 +71,18 @@ execute manually
 $ java  -Dlogback.configurationFile=openmano/scripts/flow-logback.xml \
   -jar floodlight-0.90/target/floodlight.jar -cf openmano/scripts/flow.properties
 ```
+
+## OpenMANO GUI Setup
+Check whether apache server is installed or not, if not, please install it.
+```
+$ sudo service apache2 status
+$ sudo apt-get install apache2
+```
+Change the user owner of the directory 'openmano-gui'
+```
+sudo chown -R www-data ./openmano-gui 
+```
+Create a link to apache web directory
+```
+sudo ln -s /<full path>/openmano-gui /var/www/html/openmano
+```
